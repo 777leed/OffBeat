@@ -1,0 +1,104 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "GothamBold"; /* Name you want to give the font */
+  src: url("./assets/fonts/GothamBold.ttf") format("truetype"); /* Path to the .ttf file */
+}
+@font-face {
+  font-family: "GothamBook"; /* Name you want to give the font */
+  src: url("./assets/fonts/GothamBook.ttf") format("truetype"); /* Path to the .ttf file */
+}
+@font-face {
+  font-family: "GothamLight"; /* Name you want to give the font */
+  src: url("./assets/fonts/GothamLight.ttf") format("truetype"); /* Path to the .ttf file */
+}
+/*
+ *  STYLE 1
+ */
+
+#style-1::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+#style-1::-webkit-scrollbar {
+  width: 12px;
+}
+
+#style-1::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+#root {
+  width: 100%;
+  height: 100%;
+}
+.GothamBold {
+  font-family: "GothamBold";
+}
+.GothamBook {
+  font-family: "GothamBook";
+}
+.GothamLight {
+  font-family: "GothamLight";
+}
+
+button {
+  all: unset;
+  border-radius: calc(infinity * 1px);
+  width: 100%;
+  text-align: center;
+  border: 1px solid white;
+  background-color: color-mix(
+    in oklab,
+    var(--color-black) /* #000 = #000000 */ 60%,
+    transparent
+  );
+  padding-inline: calc(var(--spacing) * 4) /* 1rem = 16px */;
+  cursor: pointer;
+  outline: none;
+}
+button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: black;
+  border: 1px solid gray;
+}
+.noise {
+  position: relative;
+  background: linear-gradient(
+    152deg,
+    rgba(0, 0, 0, 1) 58%,
+    rgba(67, 67, 67, 0.548) 100%
+  );
+  overflow: hidden; /* Ensure the noise doesn't overflow */
+}
+
+.noise::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none; /* Ensure the noise doesn't interfere with clicks */
+  animation: noise 1s infinite;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
