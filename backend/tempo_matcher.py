@@ -1,6 +1,5 @@
 import ast
 import pandas as pd
-import numpy as np
 from scipy.spatial import cKDTree
 
 def optimized_approach_no_duplicates(artist1, artist2, df, tempo_tolerance=5, top_n=20):

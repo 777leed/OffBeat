@@ -42,6 +42,6 @@ def match_tempo():
     result = optimized_approach_no_duplicates(artist1, artist2, filtered_df)
     return jsonify(result.to_dict(orient='records'))
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
